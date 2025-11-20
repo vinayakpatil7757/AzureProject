@@ -1,0 +1,9 @@
+{
+	"name": "DE-first-project",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "68e86500-13e2-407a-b535-2ffe4efae147",
+		"tenantId": "b40df172-2591-483f-ab44-9c7ce88712c3"
+	}
+}
