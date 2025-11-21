@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "copy_input_to_output",
+				"name": "copy_input_to_output2",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
