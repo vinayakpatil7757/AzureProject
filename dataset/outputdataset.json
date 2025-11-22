@@ -1,10 +1,6 @@
 {
 	"name": "outputdataset",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage2",
-			"type": "LinkedServiceReference"
-		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
