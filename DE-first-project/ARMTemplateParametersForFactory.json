@@ -28,6 +28,9 @@
 		},
 		"DataLake_properties_typeProperties_url": {
 			"value": "https://vinayakazurestorage.dfs.core.windows.net/"
+		},
+		"storageTrig_properties_typeProperties_scope": {
+			"value": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
 		}
 	}
 }

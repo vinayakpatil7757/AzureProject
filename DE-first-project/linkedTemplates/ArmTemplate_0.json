@@ -38,6 +38,10 @@
 		"DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://vinayakazurestorage.dfs.core.windows.net/"
+		},
+		"storageTrig_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
 		}
 	},
 	"variables": {
@@ -317,12 +321,12 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/scheduletrig1')]",
+			"name": "[concat(parameters('factoryName'), '/storageTrig')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
@@ -332,22 +336,15 @@
 						"parameters": {}
 					}
 				],
-				"type": "ScheduleTrigger",
+				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"recurrence": {
-						"frequency": "Day",
-						"interval": 25,
-						"startTime": "2025-11-21T15:36:00",
-						"timeZone": "India Standard Time",
-						"schedule": {
-							"minutes": [
-								30
-							],
-							"hours": [
-								7
-							]
-						}
-					}
+					"blobPathBeginsWith": "/adfpractice/blobs/inputfolder/",
+					"blobPathEndsWith": ".txt",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('storageTrig_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
 				}
 			},
 			"dependsOn": [

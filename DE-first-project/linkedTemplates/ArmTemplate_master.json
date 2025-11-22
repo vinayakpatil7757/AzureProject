@@ -39,6 +39,10 @@
 			"type": "string",
 			"defaultValue": "https://vinayakazurestorage.dfs.core.windows.net/"
 		},
+		"storageTrig_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -89,6 +93,9 @@
 					},
 					"DataLake_properties_typeProperties_url": {
 						"value": "[parameters('DataLake_properties_typeProperties_url')]"
+					},
+					"storageTrig_properties_typeProperties_scope": {
+						"value": "[parameters('storageTrig_properties_typeProperties_scope')]"
 					}
 				}
 			},
