@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "event_trigger",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/gold/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
