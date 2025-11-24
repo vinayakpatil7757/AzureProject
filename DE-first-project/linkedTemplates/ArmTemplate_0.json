@@ -149,7 +149,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "*.txt",
+						"fileName": "samplefile2.txt",
 						"container": "bronze"
 					}
 				}
@@ -371,7 +371,7 @@
 							"enableLogging": true,
 							"storeSettings": {
 								"type": "AzureBlobStorageReadSettings",
-								"fileListPath": "bronze",
+								"recursive": true,
 								"enablePartitionDiscovery": false
 							}
 						}
