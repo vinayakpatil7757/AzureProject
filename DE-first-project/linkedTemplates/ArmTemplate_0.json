@@ -149,7 +149,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "samplefile2.txt",
+						"fileName": "*.txt",
 						"container": "bronze"
 					}
 				}
