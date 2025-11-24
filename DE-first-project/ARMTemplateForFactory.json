@@ -826,7 +826,7 @@
 				],
 				"type": "BlobEventsTrigger",
 				"typeProperties": {
-					"blobPathBeginsWith": "/gold/blobs/gold/",
+					"blobPathBeginsWith": "/gold/blobs/",
 					"ignoreEmptyBlobs": true,
 					"scope": "[parameters('storage event trigger_properties_typeProperties_scope')]",
 					"events": [
