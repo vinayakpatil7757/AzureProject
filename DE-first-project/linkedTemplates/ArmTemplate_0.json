@@ -149,7 +149,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "*.txt",
+						"fileName": "*.csv",
 						"container": "bronze"
 					}
 				}
