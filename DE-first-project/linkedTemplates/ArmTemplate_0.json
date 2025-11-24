@@ -616,7 +616,7 @@
 									},
 									{
 										"source": {
-											"name": "location",
+											"name": "loc",
 											"type": "String",
 											"physicalType": "String"
 										},
