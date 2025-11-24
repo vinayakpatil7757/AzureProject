@@ -8,29 +8,35 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
-		"AzureBlobStorage2_connectionString": {
-			"value": ""
-		},
-		"AzureSqlDatabase1_password": {
+		"AzureSqlDatabase2_password": {
 			"value": ""
 		},
 		"DataLake_accountKey": {
 			"value": ""
 		},
-		"AzureSqlDatabase1_properties_typeProperties_server": {
+		"SqlServer1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
 			"value": "azureprojectservervinayak.database.windows.net"
 		},
-		"AzureSqlDatabase1_properties_typeProperties_database": {
-			"value": "azureprojectdbvinayak"
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "@{linkedService().db_name}"
 		},
-		"AzureSqlDatabase1_properties_typeProperties_userName": {
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
 			"value": "adminvinayak"
 		},
 		"DataLake_properties_typeProperties_url": {
 			"value": "https://vinayakazurestorage.dfs.core.windows.net/"
 		},
-		"storageTrig_properties_typeProperties_scope": {
-			"value": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
+		"SqlServer1_properties_typeProperties_server": {
+			"value": "azureprojectservervinayak.database.windows.net"
+		},
+		"SqlServer1_properties_typeProperties_database": {
+			"value": "azureprojectdbvinayak"
+		},
+		"SqlServer1_properties_typeProperties_userName": {
+			"value": "adminvinayak"
 		}
 	}
 }
