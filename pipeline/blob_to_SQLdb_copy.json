@@ -37,9 +37,7 @@
 						"mappings": [
 							{
 								"source": {
-									"name": "emp_id",
-									"type": "String",
-									"physicalType": "String"
+									"name": ""
 								},
 								"sink": {
 									"name": "emp_id",
@@ -49,9 +47,7 @@
 							},
 							{
 								"source": {
-									"name": "Name",
-									"type": "String",
-									"physicalType": "String"
+									"name": ""
 								},
 								"sink": {
 									"name": "Name",
@@ -61,9 +57,7 @@
 							},
 							{
 								"source": {
-									"name": "salary",
-									"type": "String",
-									"physicalType": "String"
+									"name": ""
 								},
 								"sink": {
 									"name": "salary",
@@ -73,9 +67,7 @@
 							},
 							{
 								"source": {
-									"name": "address",
-									"type": "String",
-									"physicalType": "String"
+									"name": ""
 								},
 								"sink": {
 									"name": "address",
@@ -85,9 +77,7 @@
 							},
 							{
 								"source": {
-									"name": "location",
-									"type": "String",
-									"physicalType": "String"
+									"name": ""
 								},
 								"sink": {
 									"name": "location",
@@ -97,9 +87,7 @@
 							},
 							{
 								"source": {
-									"name": "email",
-									"type": "String",
-									"physicalType": "String"
+									"name": ""
 								},
 								"sink": {
 									"name": "email",
