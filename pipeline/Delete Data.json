@@ -29,7 +29,7 @@
 					"enableLogging": true,
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
-						"fileListPath": "bronze",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					}
 				}
