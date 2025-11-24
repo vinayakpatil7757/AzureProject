@@ -67,7 +67,7 @@
 			"type": "string",
 			"defaultValue": "adminvinayak"
 		},
-		"trigger1_properties_typeProperties_scope": {
+		"storage event trigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
 		}
@@ -809,7 +809,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/trigger1')]",
+			"name": "[concat(parameters('factoryName'), '/storage event trigger')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -828,7 +828,7 @@
 				"typeProperties": {
 					"blobPathBeginsWith": "/gold/blobs/",
 					"ignoreEmptyBlobs": true,
-					"scope": "[parameters('trigger1_properties_typeProperties_scope')]",
+					"scope": "[parameters('storage event trigger_properties_typeProperties_scope')]",
 					"events": [
 						"Microsoft.Storage.BlobCreated"
 					]

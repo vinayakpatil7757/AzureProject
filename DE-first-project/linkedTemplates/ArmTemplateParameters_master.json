@@ -50,7 +50,7 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "adminvinayak"
 		},
-		"trigger1_properties_typeProperties_scope": {
+		"storage event trigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
 		},
 		"containerUri": {
