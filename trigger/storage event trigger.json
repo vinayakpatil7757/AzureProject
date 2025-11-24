@@ -13,7 +13,7 @@
 		],
 		"type": "BlobEventsTrigger",
 		"typeProperties": {
-			"blobPathBeginsWith": "/gold/blobs/gold/",
+			"blobPathBeginsWith": "/gold/blobs/",
 			"ignoreEmptyBlobs": true,
 			"scope": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage",
 			"events": [
