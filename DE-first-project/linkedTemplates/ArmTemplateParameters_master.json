@@ -8,6 +8,9 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureSQLdb_password": {
+			"value": ""
+		},
 		"AzureSqlDatabase2_password": {
 			"value": ""
 		},
@@ -17,8 +20,14 @@
 		"SqlServer1_password": {
 			"value": ""
 		},
-		"AzureSQLdb_password": {
-			"value": ""
+		"AzureSQLdb_properties_typeProperties_server": {
+			"value": "azureprojectservervinayak.database.windows.net"
+		},
+		"AzureSQLdb_properties_typeProperties_database": {
+			"value": "azureprojectdbvinayak"
+		},
+		"AzureSQLdb_properties_typeProperties_userName": {
+			"value": "adminvinayak"
 		},
 		"AzureSqlDatabase2_properties_typeProperties_server": {
 			"value": "azureprojectservervinayak.database.windows.net"
@@ -39,15 +48,6 @@
 			"value": "azureprojectdbvinayak"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
-			"value": "adminvinayak"
-		},
-		"AzureSQLdb_properties_typeProperties_server": {
-			"value": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSQLdb_properties_typeProperties_database": {
-			"value": "azureprojectdbvinayak"
-		},
-		"AzureSQLdb_properties_typeProperties_userName": {
 			"value": "adminvinayak"
 		},
 		"containerUri": {

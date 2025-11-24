@@ -11,6 +11,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
 		},
+		"AzureSQLdb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSQLdb'"
+		},
 		"AzureSqlDatabase2_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
@@ -23,9 +27,17 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
-		"AzureSQLdb_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'AzureSQLdb'"
+		"AzureSQLdb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azureprojectservervinayak.database.windows.net"
+		},
+		"AzureSQLdb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "azureprojectdbvinayak"
+		},
+		"AzureSQLdb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminvinayak"
 		},
 		"AzureSqlDatabase2_properties_typeProperties_server": {
 			"type": "string",
@@ -52,18 +64,6 @@
 			"defaultValue": "azureprojectdbvinayak"
 		},
 		"SqlServer1_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adminvinayak"
-		},
-		"AzureSQLdb_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSQLdb_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "azureprojectdbvinayak"
-		},
-		"AzureSQLdb_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "adminvinayak"
 		},
@@ -97,6 +97,9 @@
 					"AzureBlobStorage1_connectionString": {
 						"value": "[parameters('AzureBlobStorage1_connectionString')]"
 					},
+					"AzureSQLdb_password": {
+						"value": "[parameters('AzureSQLdb_password')]"
+					},
 					"AzureSqlDatabase2_password": {
 						"value": "[parameters('AzureSqlDatabase2_password')]"
 					},
@@ -106,8 +109,14 @@
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
 					},
-					"AzureSQLdb_password": {
-						"value": "[parameters('AzureSQLdb_password')]"
+					"AzureSQLdb_properties_typeProperties_server": {
+						"value": "[parameters('AzureSQLdb_properties_typeProperties_server')]"
+					},
+					"AzureSQLdb_properties_typeProperties_database": {
+						"value": "[parameters('AzureSQLdb_properties_typeProperties_database')]"
+					},
+					"AzureSQLdb_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSQLdb_properties_typeProperties_userName')]"
 					},
 					"AzureSqlDatabase2_properties_typeProperties_server": {
 						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
@@ -129,15 +138,6 @@
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
-					},
-					"AzureSQLdb_properties_typeProperties_server": {
-						"value": "[parameters('AzureSQLdb_properties_typeProperties_server')]"
-					},
-					"AzureSQLdb_properties_typeProperties_database": {
-						"value": "[parameters('AzureSQLdb_properties_typeProperties_database')]"
-					},
-					"AzureSQLdb_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSQLdb_properties_typeProperties_userName')]"
 					}
 				}
 			},
