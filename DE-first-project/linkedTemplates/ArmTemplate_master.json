@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
 		},
+		"AzureSqltumblingprocedure_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqltumblingprocedure'"
+		},
 		"DataLake_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DataLake'"
@@ -26,10 +30,6 @@
 		"SqlServer1_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
-		},
-		"AzureSqltumblingprocedure_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'AzureSqltumblingprocedure'"
 		},
 		"AzureSQLdb_properties_typeProperties_server": {
 			"type": "string",
@@ -55,6 +55,18 @@
 			"type": "string",
 			"defaultValue": "adminvinayak"
 		},
+		"AzureSqltumblingprocedure_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azureprojectservervinayak.database.windows.net"
+		},
+		"AzureSqltumblingprocedure_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "azureprojectdbvinayak"
+		},
+		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminvinayak"
+		},
 		"DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://vinayakazurestorage.dfs.core.windows.net/"
@@ -74,18 +86,6 @@
 		"storage event trigger_properties_typeProperties_scope": {
 			"type": "string",
 			"defaultValue": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "azureprojectdbvinayak"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adminvinayak"
 		},
 		"tumbling_proc_properties_pipeline_parameters_pstartdate": {
 			"type": "string",
@@ -131,14 +131,14 @@
 					"AzureSqlDatabase2_password": {
 						"value": "[parameters('AzureSqlDatabase2_password')]"
 					},
+					"AzureSqltumblingprocedure_password": {
+						"value": "[parameters('AzureSqltumblingprocedure_password')]"
+					},
 					"DataLake_accountKey": {
 						"value": "[parameters('DataLake_accountKey')]"
 					},
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
-					},
-					"AzureSqltumblingprocedure_password": {
-						"value": "[parameters('AzureSqltumblingprocedure_password')]"
 					},
 					"AzureSQLdb_properties_typeProperties_server": {
 						"value": "[parameters('AzureSQLdb_properties_typeProperties_server')]"
@@ -158,6 +158,15 @@
 					"AzureSqlDatabase2_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
 					},
+					"AzureSqltumblingprocedure_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_server')]"
+					},
+					"AzureSqltumblingprocedure_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_database')]"
+					},
+					"AzureSqltumblingprocedure_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_userName')]"
+					},
 					"DataLake_properties_typeProperties_url": {
 						"value": "[parameters('DataLake_properties_typeProperties_url')]"
 					},
@@ -169,15 +178,6 @@
 					},
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
-					},
-					"AzureSqltumblingprocedure_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_server')]"
-					},
-					"AzureSqltumblingprocedure_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_database')]"
-					},
-					"AzureSqltumblingprocedure_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_userName')]"
 					}
 				}
 			},

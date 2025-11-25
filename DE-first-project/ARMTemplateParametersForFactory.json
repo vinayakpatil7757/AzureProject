@@ -14,13 +14,13 @@
 		"AzureSqlDatabase2_password": {
 			"value": ""
 		},
+		"AzureSqltumblingprocedure_password": {
+			"value": ""
+		},
 		"DataLake_accountKey": {
 			"value": ""
 		},
 		"SqlServer1_password": {
-			"value": ""
-		},
-		"AzureSqltumblingprocedure_password": {
 			"value": ""
 		},
 		"AzureSQLdb_properties_typeProperties_server": {
@@ -41,6 +41,15 @@
 		"AzureSqlDatabase2_properties_typeProperties_userName": {
 			"value": "adminvinayak"
 		},
+		"AzureSqltumblingprocedure_properties_typeProperties_server": {
+			"value": "azureprojectservervinayak.database.windows.net"
+		},
+		"AzureSqltumblingprocedure_properties_typeProperties_database": {
+			"value": "azureprojectdbvinayak"
+		},
+		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
+			"value": "adminvinayak"
+		},
 		"DataLake_properties_typeProperties_url": {
 			"value": "https://vinayakazurestorage.dfs.core.windows.net/"
 		},
@@ -55,15 +64,6 @@
 		},
 		"storage event trigger_properties_typeProperties_scope": {
 			"value": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_server": {
-			"value": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_database": {
-			"value": "azureprojectdbvinayak"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
-			"value": "adminvinayak"
 		},
 		"tumbling_proc_properties_pipeline_parameters_pstartdate": {
 			"value": "@trigger().outputs.windowStarttime"
