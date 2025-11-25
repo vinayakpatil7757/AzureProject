@@ -2,15 +2,15 @@
 	"name": "tumbling_proc",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Started",
+		"runtimeState": "Stopped",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "tumbling procedure",
 				"type": "PipelineReference"
 			},
 			"parameters": {
-				"pstartdate": "@trigger().outputs.windowEndtime",
-				"penddate": "@trigger().outputs.windowStarttime"
+				"pstartdate": "@trigger().outputs.windowStarttime",
+				"penddate": "@trigger().outputs.windowEndtime"
 			}
 		},
 		"type": "TumblingWindowTrigger",
