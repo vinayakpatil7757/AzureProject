@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'SqlServer1'"
 		},
+		"AzureSqltumblingprocedure_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqltumblingprocedure'"
+		},
 		"AzureSQLdb_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "azureprojectservervinayak.database.windows.net"
@@ -71,6 +75,26 @@
 			"type": "string",
 			"defaultValue": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
 		},
+		"AzureSqltumblingprocedure_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azureprojectservervinayak.database.windows.net"
+		},
+		"AzureSqltumblingprocedure_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "azureprojectdbvinayak"
+		},
+		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminvinayak"
+		},
+		"tumbling_proc_properties_pipeline_parameters_pstartdate": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowStarttime"
+		},
+		"tumbling_proc_properties_pipeline_parameters_penddate": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowEndtime"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -113,6 +137,9 @@
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
 					},
+					"AzureSqltumblingprocedure_password": {
+						"value": "[parameters('AzureSqltumblingprocedure_password')]"
+					},
 					"AzureSQLdb_properties_typeProperties_server": {
 						"value": "[parameters('AzureSQLdb_properties_typeProperties_server')]"
 					},
@@ -143,12 +170,47 @@
 					"SqlServer1_properties_typeProperties_userName": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_userName')]"
 					},
-					"storage event trigger_properties_typeProperties_scope": {
-						"value": "[parameters('storage event trigger_properties_typeProperties_scope')]"
+					"AzureSqltumblingprocedure_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_server')]"
+					},
+					"AzureSqltumblingprocedure_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_database')]"
+					},
+					"AzureSqltumblingprocedure_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_userName')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "DE-first-project_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"storage event trigger_properties_typeProperties_scope": {
+						"value": "[parameters('storage event trigger_properties_typeProperties_scope')]"
+					},
+					"tumbling_proc_properties_pipeline_parameters_pstartdate": {
+						"value": "[parameters('tumbling_proc_properties_pipeline_parameters_pstartdate')]"
+					},
+					"tumbling_proc_properties_pipeline_parameters_penddate": {
+						"value": "[parameters('tumbling_proc_properties_pipeline_parameters_penddate')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_0')]"
+			]
 		}
 	]
 }
