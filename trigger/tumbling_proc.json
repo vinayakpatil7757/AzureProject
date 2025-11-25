@@ -2,7 +2,7 @@
 	"name": "tumbling_proc",
 	"properties": {
 		"annotations": [],
-		"runtimeState": "Stopped",
+		"runtimeState": "Started",
 		"pipeline": {
 			"pipelineReference": {
 				"referenceName": "tumbling procedure",
