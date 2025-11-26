@@ -428,6 +428,58 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DelimitedText10')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "gold"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "emp_id",
+						"type": "String"
+					},
+					{
+						"name": "Name",
+						"type": "String"
+					},
+					{
+						"name": "salary",
+						"type": "String"
+					},
+					{
+						"name": "address",
+						"type": "String"
+					},
+					{
+						"name": "loc",
+						"type": "String"
+					},
+					{
+						"name": "email",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DelimitedText2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -559,7 +611,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/blob2_sql_bd')]",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText5')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -573,6 +625,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": "emp_1.csv",
+						"folderPath": "inputfolder",
 						"container": "adfpractice"
 					},
 					"columnDelimiter": ",",
@@ -586,7 +639,7 @@
 						"type": "String"
 					},
 					{
-						"name": "name",
+						"name": "Name",
 						"type": "String"
 					},
 					{
@@ -612,68 +665,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/inputcsvfile')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "AzureBlobStorage1",
-					"type": "LinkedServiceReference"
-				},
-				"parameters": {
-					"filename": {
-						"type": "string"
-					}
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobStorageLocation",
-						"fileName": {
-							"value": "@dataset().filename",
-							"type": "Expression"
-						},
-						"container": "adfpractice"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "id",
-						"type": "String"
-					},
-					{
-						"name": " name ",
-						"type": "String"
-					},
-					{
-						"name": " age",
-						"type": "String"
-					},
-					{
-						"name": " salary",
-						"type": "String"
-					},
-					{
-						"name": " address",
-						"type": "String"
-					},
-					{
-						"name": " nominee",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/inputdataset')]",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText6')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -686,7 +678,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "sales_data.csv",
+						"fileName": "emp_1.csv",
 						"folderPath": "inputfolder",
 						"container": "adfpractice"
 					},
@@ -697,35 +689,27 @@
 				},
 				"schema": [
 					{
-						"name": "csutomer_Id",
+						"name": "emp_id",
 						"type": "String"
 					},
 					{
-						"name": "store_id",
+						"name": "Name",
 						"type": "String"
 					},
 					{
-						"name": "product_name",
+						"name": "salary",
 						"type": "String"
 					},
 					{
-						"name": "sales_date",
+						"name": "address",
 						"type": "String"
 					},
 					{
-						"name": "sales_person_id",
+						"name": "loc",
 						"type": "String"
 					},
 					{
-						"name": "price",
-						"type": "String"
-					},
-					{
-						"name": "quantity",
-						"type": "String"
-					},
-					{
-						"name": "total_cost",
+						"name": "email",
 						"type": "String"
 					}
 				]
@@ -735,7 +719,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/outputdataset')]",
+			"name": "[concat(parameters('factoryName'), '/DelimitedText7')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -748,8 +732,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"fileName": "salesdata2.csv",
-						"folderPath": "output2",
+						"fileName": "department.csv",
+						"folderPath": "outputfolder",
 						"container": "adfpractice"
 					},
 					"columnDelimiter": ",",
@@ -757,7 +741,20 @@
 					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
-				"schema": []
+				"schema": [
+					{
+						"name": "user",
+						"type": "String"
+					},
+					{
+						"name": "department",
+						"type": "String"
+					},
+					{
+						"name": "designation",
+						"type": "String"
+					}
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
