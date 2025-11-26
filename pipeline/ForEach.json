@@ -24,6 +24,7 @@
 					],
 					"storeSettings": {
 						"type": "AzureBlobStorageReadSettings",
+						"recursive": true,
 						"enablePartitionDiscovery": false
 					},
 					"formatSettings": {
@@ -67,11 +68,10 @@
 									"storeSettings": {
 										"type": "AzureBlobStorageReadSettings",
 										"recursive": true,
-										"wildcardFolderPath": {
+										"wildcardFileName": {
 											"value": "@item().name",
 											"type": "Expression"
 										},
-										"wildcardFileName": "*",
 										"enablePartitionDiscovery": false
 									},
 									"formatSettings": {
@@ -101,7 +101,7 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "DelimitedText13",
+									"referenceName": "DelimitedText15",
 									"type": "DatasetReference"
 								}
 							],
