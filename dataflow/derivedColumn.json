@@ -1,5 +1,5 @@
 {
-	"name": "dataflow3",
+	"name": "derivedColumn",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
