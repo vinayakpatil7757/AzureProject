@@ -196,6 +196,26 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "DE-first-project_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
 					},
 					"storage event trigger_properties_typeProperties_scope": {
 						"value": "[parameters('storage event trigger_properties_typeProperties_scope')]"
@@ -209,7 +229,7 @@
 				}
 			},
 			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_0')]"
+				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_1')]"
 			]
 		}
 	]
