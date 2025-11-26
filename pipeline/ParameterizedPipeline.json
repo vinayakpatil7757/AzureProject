@@ -44,17 +44,37 @@
 				"inputs": [
 					{
 						"referenceName": "ParameterizedPipelineDataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tbl_name": {
+								"value": "@pipeline().parameters.table_name",
+								"type": "Expression"
+							}
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "ParamPipelineOutputDataset",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"container_name": {
+								"value": "@pipeline().parameters.container_name",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}
 		],
+		"parameters": {
+			"table_name": {
+				"type": "string"
+			},
+			"container_name": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
