@@ -562,7 +562,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextWriteSettings",
 									"quoteAllText": true,
-									"fileExtension": ".txt"
+									"fileExtension": ""
 								}
 							},
 							"enableStaging": false,
@@ -2051,6 +2051,7 @@
 						"          loc as string,",
 						"          email as string",
 						"     ),",
+						"     partitionFileNames:['joinTxOutput.csv'],",
 						"     skipDuplicateMapInputs: true,",
 						"     skipDuplicateMapOutputs: true,",
 						"     partitionBy('hash', 1)) ~> JoinOutput"
