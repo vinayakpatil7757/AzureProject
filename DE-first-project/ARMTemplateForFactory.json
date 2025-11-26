@@ -1466,7 +1466,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@concat(toUpper('parameterized_pipeline_output'),utcNow(),'csv')",
+							"value": "@concat(toUpper('parameterized_pipeline_output'),utcNow(),'.csv')",
 							"type": "Expression"
 						},
 						"container": {
