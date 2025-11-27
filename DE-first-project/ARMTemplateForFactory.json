@@ -1066,7 +1066,7 @@
 						"type": "ForEach",
 						"dependsOn": [
 							{
-								"activity": "Lookup1",
+								"activity": "Wait2",
 								"dependencyConditions": [
 									"Succeeded"
 								]
@@ -1112,12 +1112,19 @@
 						}
 					},
 					{
-						"name": "Wait1",
+						"name": "Wait2",
 						"type": "Wait",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Lookup1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 1
+							"waitTimeInSeconds": 30
 						}
 					}
 				],
