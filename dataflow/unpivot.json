@@ -1,12 +1,12 @@
 {
-	"name": "pivot",
+	"name": "unpivot",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText28",
+						"referenceName": "DelimitedText30",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "DelimitedText29",
+						"referenceName": "DelimitedText31",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -23,29 +23,27 @@
 			],
 			"transformations": [
 				{
-					"name": "pivot1"
+					"name": "unpivot1"
 				}
 			],
 			"scriptLines": [
 				"source(output(",
-				"          emp_id as string,",
-				"          Name as string,",
-				"          salary as string,",
-				"          address as string,",
-				"          loc as string,",
-				"          email as string,",
-				"          department as string",
+				"          department as string,",
+				"          count_india as string,",
+				"          count_usa as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     limit: 100,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 pivot(groupBy(department),",
-				"     pivotBy(address),",
-				"     count_ = count(emp_id),",
-				"     columnNaming: '$N$V',",
-				"     lateral: true) ~> pivot1",
-				"pivot1 sink(allowSchemaDrift: true,",
+				"source1 unpivot(output(",
+				"          country as string,",
+				"          count as string",
+				"     ),",
+				"     ungroupBy(department),",
+				"     pivotValues: ['india', 'usa'],",
+				"     lateral: true,",
+				"     ignoreNullPivots: false) ~> unpivot1",
+				"unpivot1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          emp_id as string,",
@@ -55,8 +53,10 @@
 				"          loc as string,",
 				"          email as string",
 				"     ),",
+				"     partitionFileNames:['emp_long.csv'],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1"
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> sink1"
 			]
 		}
 	}

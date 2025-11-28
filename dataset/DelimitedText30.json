@@ -1,0 +1,36 @@
+{
+	"name": "DelimitedText30",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "emp_wide.csv",
+				"container": "silver"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "department",
+				"type": "String"
+			},
+			{
+				"name": "count_india",
+				"type": "String"
+			},
+			{
+				"name": "count_usa",
+				"type": "String"
+			}
+		]
+	}
+}
