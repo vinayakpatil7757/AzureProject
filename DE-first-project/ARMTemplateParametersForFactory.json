@@ -11,16 +11,10 @@
 		"AzureSQLdb_password": {
 			"value": ""
 		},
-		"AzureSqlDatabase2_password": {
-			"value": ""
-		},
-		"AzureSqlDatabase3_password": {
-			"value": ""
-		},
-		"AzureSqltumblingprocedure_password": {
-			"value": ""
-		},
 		"DataLake_accountKey": {
+			"value": ""
+		},
+		"HttpServer1_password": {
 			"value": ""
 		},
 		"SqlServer1_password": {
@@ -35,35 +29,17 @@
 		"AzureSQLdb_properties_typeProperties_userName": {
 			"value": "adminvinayak"
 		},
-		"AzureSqlDatabase2_properties_typeProperties_server": {
-			"value": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqlDatabase2_properties_typeProperties_database": {
-			"value": "@{linkedService().db_name}"
-		},
-		"AzureSqlDatabase2_properties_typeProperties_userName": {
-			"value": "adminvinayak"
-		},
-		"AzureSqlDatabase3_properties_typeProperties_server": {
-			"value": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqlDatabase3_properties_typeProperties_database": {
-			"value": "azureprojectdbvinayak"
-		},
-		"AzureSqlDatabase3_properties_typeProperties_userName": {
-			"value": "adminvinayak"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_server": {
-			"value": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_database": {
-			"value": "azureprojectdbvinayak"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
-			"value": "adminvinayak"
-		},
 		"DataLake_properties_typeProperties_url": {
 			"value": "https://vinayakazurestorage.dfs.core.windows.net/"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://drive.usercontent.google.com/download?id=1bmmtkc5NLZQ4iU6Qz_7di-juuxA2kT1t&export=download&authuser=0"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"value": "adminvinayak"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"value": "https://reqres.in/api/users"
 		},
 		"SqlServer1_properties_typeProperties_server": {
 			"value": "azureprojectservervinayak.database.windows.net"
@@ -73,15 +49,6 @@
 		},
 		"SqlServer1_properties_typeProperties_userName": {
 			"value": "adminvinayak"
-		},
-		"storage event trigger_properties_typeProperties_scope": {
-			"value": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
-		},
-		"tumbling_proc_properties_pipeline_parameters_pstartdate": {
-			"value": "@trigger().outputs.windowStarttime"
-		},
-		"tumbling_proc_properties_pipeline_parameters_penddate": {
-			"value": "@trigger().outputs.windowEndtime"
 		}
 	}
 }

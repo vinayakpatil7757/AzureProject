@@ -15,21 +15,13 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'AzureSQLdb'"
 		},
-		"AzureSqlDatabase2_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
-		},
-		"AzureSqlDatabase3_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'AzureSqlDatabase3'"
-		},
-		"AzureSqltumblingprocedure_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'AzureSqltumblingprocedure'"
-		},
 		"DataLake_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DataLake'"
+		},
+		"HttpServer1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HttpServer1'"
 		},
 		"SqlServer1_password": {
 			"type": "secureString",
@@ -47,45 +39,21 @@
 			"type": "string",
 			"defaultValue": "adminvinayak"
 		},
-		"AzureSqlDatabase2_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqlDatabase2_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "@{linkedService().db_name}"
-		},
-		"AzureSqlDatabase2_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adminvinayak"
-		},
-		"AzureSqlDatabase3_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqlDatabase3_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "azureprojectdbvinayak"
-		},
-		"AzureSqlDatabase3_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adminvinayak"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_server": {
-			"type": "string",
-			"defaultValue": "azureprojectservervinayak.database.windows.net"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "azureprojectdbvinayak"
-		},
-		"AzureSqltumblingprocedure_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "adminvinayak"
-		},
 		"DataLake_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://vinayakazurestorage.dfs.core.windows.net/"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://drive.usercontent.google.com/download?id=1bmmtkc5NLZQ4iU6Qz_7di-juuxA2kT1t&export=download&authuser=0"
+		},
+		"HttpServer1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "adminvinayak"
+		},
+		"RestService1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://reqres.in/api/users"
 		},
 		"SqlServer1_properties_typeProperties_server": {
 			"type": "string",
@@ -98,18 +66,6 @@
 		"SqlServer1_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "adminvinayak"
-		},
-		"storage event trigger_properties_typeProperties_scope": {
-			"type": "string",
-			"defaultValue": "/subscriptions/98cd14ad-9353-416d-bfea-ab9b44c32c37/resourceGroups/DE_Azure_project/providers/Microsoft.Storage/storageAccounts/vinayakazurestorage"
-		},
-		"tumbling_proc_properties_pipeline_parameters_pstartdate": {
-			"type": "string",
-			"defaultValue": "@trigger().outputs.windowStarttime"
-		},
-		"tumbling_proc_properties_pipeline_parameters_penddate": {
-			"type": "string",
-			"defaultValue": "@trigger().outputs.windowEndtime"
 		},
 		"containerUri": {
 			"type": "string",
@@ -144,17 +100,11 @@
 					"AzureSQLdb_password": {
 						"value": "[parameters('AzureSQLdb_password')]"
 					},
-					"AzureSqlDatabase2_password": {
-						"value": "[parameters('AzureSqlDatabase2_password')]"
-					},
-					"AzureSqlDatabase3_password": {
-						"value": "[parameters('AzureSqlDatabase3_password')]"
-					},
-					"AzureSqltumblingprocedure_password": {
-						"value": "[parameters('AzureSqltumblingprocedure_password')]"
-					},
 					"DataLake_accountKey": {
 						"value": "[parameters('DataLake_accountKey')]"
+					},
+					"HttpServer1_password": {
+						"value": "[parameters('HttpServer1_password')]"
 					},
 					"SqlServer1_password": {
 						"value": "[parameters('SqlServer1_password')]"
@@ -168,35 +118,17 @@
 					"AzureSQLdb_properties_typeProperties_userName": {
 						"value": "[parameters('AzureSQLdb_properties_typeProperties_userName')]"
 					},
-					"AzureSqlDatabase2_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
-					},
-					"AzureSqlDatabase2_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
-					},
-					"AzureSqlDatabase2_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
-					},
-					"AzureSqlDatabase3_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_server')]"
-					},
-					"AzureSqlDatabase3_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_database')]"
-					},
-					"AzureSqlDatabase3_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_userName')]"
-					},
-					"AzureSqltumblingprocedure_properties_typeProperties_server": {
-						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_server')]"
-					},
-					"AzureSqltumblingprocedure_properties_typeProperties_database": {
-						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_database')]"
-					},
-					"AzureSqltumblingprocedure_properties_typeProperties_userName": {
-						"value": "[parameters('AzureSqltumblingprocedure_properties_typeProperties_userName')]"
-					},
 					"DataLake_properties_typeProperties_url": {
 						"value": "[parameters('DataLake_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"HttpServer1_properties_typeProperties_userName": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_userName')]"
+					},
+					"RestService1_properties_typeProperties_url": {
+						"value": "[parameters('RestService1_properties_typeProperties_url')]"
 					},
 					"SqlServer1_properties_typeProperties_server": {
 						"value": "[parameters('SqlServer1_properties_typeProperties_server')]"
@@ -210,75 +142,6 @@
 				}
 			},
 			"dependsOn": []
-		},
-		{
-			"name": "DE-first-project_ArmTemplate_1",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2024-03-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_0')]"
-			]
-		},
-		{
-			"name": "DE-first-project_ArmTemplate_2",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2024-03-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_1')]"
-			]
-		},
-		{
-			"name": "DE-first-project_ArmTemplate_3",
-			"type": "Microsoft.Resources/deployments",
-			"apiVersion": "2024-03-01",
-			"properties": {
-				"mode": "incremental",
-				"templateLink": {
-					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
-					"contentVersion": "1.0.0.0"
-				},
-				"parameters": {
-					"factoryName": {
-						"value": "[parameters('factoryName')]"
-					},
-					"storage event trigger_properties_typeProperties_scope": {
-						"value": "[parameters('storage event trigger_properties_typeProperties_scope')]"
-					},
-					"tumbling_proc_properties_pipeline_parameters_pstartdate": {
-						"value": "[parameters('tumbling_proc_properties_pipeline_parameters_pstartdate')]"
-					},
-					"tumbling_proc_properties_pipeline_parameters_penddate": {
-						"value": "[parameters('tumbling_proc_properties_pipeline_parameters_penddate')]"
-					}
-				}
-			},
-			"dependsOn": [
-				"[resourceId('Microsoft.Resources/deployments', 'DE-first-project_ArmTemplate_2')]"
-			]
 		}
 	]
 }
