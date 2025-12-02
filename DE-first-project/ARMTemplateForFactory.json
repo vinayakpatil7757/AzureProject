@@ -507,7 +507,7 @@
 						"     allowSchemaDrift: true,",
 						"     validateSchema: false,",
 						"     ignoreNoFilesFound: false,",
-						"     documentForm: 'singleDocument',",
+						"     documentForm: 'arrayOfDocuments',",
 						"     partitionBy('hash', 1)) ~> source1",
 						"source1 foldDown(unroll(skills),",
 						"     mapColumn(",
