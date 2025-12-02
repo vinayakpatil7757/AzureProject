@@ -1,0 +1,76 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText4",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "parseSKILLS"
+				},
+				{
+					"name": "parseAddress"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          emp_id as integer,",
+				"          name as string,",
+				"          skills as string,",
+				"          address as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     format: 'table') ~> source1",
+				"parseAddress parse(Parsedskills = skills ? (skill1 as string,",
+				"          skill2 as string,",
+				"          skill3 as string),",
+				"     partitionBy('hash', 1),",
+				"     format: 'delimited',",
+				"     columnNamesAsHeader: false,",
+				"     columnDelimiter: '|',",
+				"     nullValue: '') ~> parseSKILLS",
+				"source1 parse(parsedAddress = address ? (city as string,",
+				"          country as string),",
+				"     format: 'json',",
+				"     documentForm: 'singleDocument') ~> parseAddress",
+				"parseSKILLS sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          user as string,",
+				"          department as string,",
+				"          designation as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          emp_id,",
+				"          name,",
+				"          City = parsedAddress.city,",
+				"          Country = parsedAddress.country,",
+				"          skill1 = Parsedskills.skill1,",
+				"          skill2 = Parsedskills.skill2,",
+				"          skill3 = Parsedskills.skill3",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
