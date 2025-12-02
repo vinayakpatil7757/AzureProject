@@ -454,7 +454,7 @@
 					],
 					"scriptLines": [
 						"source(output(",
-						"          id as boolean,",
+						"          id as integer,",
 						"          name as string,",
 						"          skills as string[]",
 						"     ),",
