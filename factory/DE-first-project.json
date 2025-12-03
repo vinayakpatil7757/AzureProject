@@ -2,7 +2,7 @@
 	"name": "DE-first-project",
 	"properties": {
 		"globalConfigurations": {
-			"PipelineBillingEnabled": "true",
+			"PipelineBillingEnabled": "false",
 			"factoryStagingLSReferenceName": "AzureBlobStorage1",
 			"factoryStagingLSType": "LinkedServiceReference"
 		}
