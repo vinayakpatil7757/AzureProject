@@ -4,7 +4,8 @@
 		"globalConfigurations": {
 			"PipelineBillingEnabled": "false",
 			"factoryStagingLSReferenceName": "AzureBlobStorage1",
-			"factoryStagingLSType": "LinkedServiceReference"
+			"factoryStagingLSType": "LinkedServiceReference",
+			"factoryStagingFolderPath": "adfpractice"
 		}
 	},
 	"location": "eastus",
