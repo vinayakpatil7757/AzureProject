@@ -1,5 +1,10 @@
 {
 	"name": "DE-first-project",
+	"properties": {
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
+		}
+	},
 	"location": "eastus",
 	"identity": {
 		"type": "SystemAssigned",
