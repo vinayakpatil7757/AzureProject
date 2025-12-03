@@ -93,9 +93,7 @@
 				"          employee_id,",
 				"          employee_name,",
 				"          department_id = source1@department_id,",
-				"          doj,",
-				"          department_id = source2@department_id,",
-				"          department_name",
+				"          doj",
 				"     ),",
 				"     partitionBy('hash', 1)) ~> sink1"
 			]
