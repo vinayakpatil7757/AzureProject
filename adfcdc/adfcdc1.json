@@ -107,22 +107,6 @@
 			{
 				"TargetEntities": [
 					{
-						"name": "dbo.employee",
-						"properties": {
-							"schema": [],
-							"dslConnectorProperties": [
-								{
-									"name": "schemaName",
-									"value": "dbo"
-								},
-								{
-									"name": "tableName",
-									"value": "employee"
-								}
-							]
-						}
-					},
-					{
 						"name": "dbo.employee_cdc",
 						"properties": {
 							"schema": [
@@ -358,6 +342,7 @@
 			},
 			"mode": "Microbatch"
 		},
+		"status": "Started",
 		"allowVNetOverride": false
 	}
 }
