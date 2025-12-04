@@ -1,0 +1,345 @@
+{
+	"name": "adfcdc1",
+	"properties": {
+		"SourceConnectionsInfo": [
+			{
+				"SourceEntities": [
+					{
+						"name": "dbo.employee",
+						"properties": {
+							"schema": [
+								{
+									"name": "emp_id",
+									"dataType": "integer"
+								},
+								{
+									"name": "Name",
+									"dataType": "string"
+								},
+								{
+									"name": "salary",
+									"dataType": "integer"
+								},
+								{
+									"name": "address",
+									"dataType": "string"
+								},
+								{
+									"name": "location",
+									"dataType": "string"
+								},
+								{
+									"name": "email",
+									"dataType": "string"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "employee"
+								},
+								{
+									"name": "enableNativeCdc",
+									"value": true
+								},
+								{
+									"name": "netChanges",
+									"value": true
+								},
+								{
+									"name": "allowSchemaDrift",
+									"value": false
+								},
+								{
+									"name": "inferDriftedColumnTypes",
+									"value": false
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "AzureSQLdb",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true,
+					"commonDslConnectorProperties": [
+						{
+							"name": "allowSchemaDrift",
+							"value": true
+						},
+						{
+							"name": "inferDriftedColumnTypes",
+							"value": true
+						},
+						{
+							"name": "format",
+							"value": "table"
+						},
+						{
+							"name": "store",
+							"value": "sqlserver"
+						},
+						{
+							"name": "databaseType",
+							"value": "databaseType"
+						},
+						{
+							"name": "database",
+							"value": "database"
+						},
+						{
+							"name": "skipInitialLoad",
+							"value": true
+						}
+					]
+				}
+			}
+		],
+		"TargetConnectionsInfo": [
+			{
+				"TargetEntities": [
+					{
+						"name": "dbo.employee",
+						"properties": {
+							"schema": [],
+							"dslConnectorProperties": [
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "employee"
+								}
+							]
+						}
+					},
+					{
+						"name": "dbo.employee_cdc",
+						"properties": {
+							"schema": [
+								{
+									"name": "emp_id",
+									"dataType": "integer"
+								},
+								{
+									"name": "Name",
+									"dataType": "string"
+								},
+								{
+									"name": "salary",
+									"dataType": "integer"
+								},
+								{
+									"name": "address",
+									"dataType": "string"
+								},
+								{
+									"name": "location",
+									"dataType": "string"
+								},
+								{
+									"name": "email",
+									"dataType": "string"
+								}
+							],
+							"dslConnectorProperties": [
+								{
+									"name": "schemaName",
+									"value": "dbo"
+								},
+								{
+									"name": "tableName",
+									"value": "employee_cdc"
+								},
+								{
+									"name": "defaultToUpsert",
+									"value": false
+								},
+								{
+									"name": "allowSchemaDrift",
+									"value": false
+								},
+								{
+									"name": "inferDriftedColumnTypes",
+									"value": false
+								}
+							]
+						}
+					}
+				],
+				"Connection": {
+					"linkedService": {
+						"referenceName": "AzureSQLdb",
+						"type": "LinkedServiceReference"
+					},
+					"linkedServiceType": "AzureSqlDatabase",
+					"type": "linkedservicetype",
+					"isInlineDataset": true,
+					"commonDslConnectorProperties": [
+						{
+							"name": "allowSchemaDrift",
+							"value": true
+						},
+						{
+							"name": "inferDriftedColumnTypes",
+							"value": true
+						},
+						{
+							"name": "format",
+							"value": "table"
+						},
+						{
+							"name": "store",
+							"value": "sqlserver"
+						},
+						{
+							"name": "databaseType",
+							"value": "databaseType"
+						},
+						{
+							"name": "database",
+							"value": "database"
+						},
+						{
+							"name": "deletable",
+							"value": false
+						},
+						{
+							"name": "insertable",
+							"value": true
+						},
+						{
+							"name": "updateable",
+							"value": false
+						},
+						{
+							"name": "upsertable",
+							"value": false
+						},
+						{
+							"name": "skipDuplicateMapInputs",
+							"value": true
+						},
+						{
+							"name": "skipDuplicateMapOutputs",
+							"value": true
+						}
+					]
+				},
+				"DataMapperMappings": [
+					{
+						"targetEntityName": "dbo.employee_cdc",
+						"sourceEntityName": "dbo.employee",
+						"sourceConnectionReference": {
+							"connectionName": "AzureSQLdb",
+							"type": "linkedservicetype"
+						},
+						"attributeMappingInfo": {
+							"attributeMappings": [
+								{
+									"name": "address",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "address",
+										"entity": "dbo.employee",
+										"entityConnectionReference": {
+											"connectionName": "AzureSQLdb",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "email",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "email",
+										"entity": "dbo.employee",
+										"entityConnectionReference": {
+											"connectionName": "AzureSQLdb",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "emp_id",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "emp_id",
+										"entity": "dbo.employee",
+										"entityConnectionReference": {
+											"connectionName": "AzureSQLdb",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "location",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "location",
+										"entity": "dbo.employee",
+										"entityConnectionReference": {
+											"connectionName": "AzureSQLdb",
+											"type": "linkedservicetype"
+										}
+									}
+								},
+								{
+									"name": "Name",
+									"type": "Derived",
+									"functionName": "upper",
+									"expression": "upper(Name)",
+									"attributeReferences": [
+										{
+											"name": "Name",
+											"entity": "dbo.employee",
+											"entityConnectionReference": {
+												"connectionName": "AzureSQLdb",
+												"type": "linkedservicetype"
+											}
+										}
+									]
+								},
+								{
+									"name": "salary",
+									"type": "Direct",
+									"functionName": "",
+									"attributeReference": {
+										"name": "salary",
+										"entity": "dbo.employee",
+										"entityConnectionReference": {
+											"connectionName": "AzureSQLdb",
+											"type": "linkedservicetype"
+										}
+									}
+								}
+							]
+						}
+					}
+				],
+				"Relationships": []
+			}
+		],
+		"Policy": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1
+			},
+			"mode": "Microbatch"
+		},
+		"allowVNetOverride": false
+	}
+}
