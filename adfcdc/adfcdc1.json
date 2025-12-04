@@ -162,7 +162,7 @@
 								},
 								{
 									"name": "defaultToUpsert",
-									"value": false
+									"value": true
 								},
 								{
 									"name": "allowSchemaDrift",
@@ -171,6 +171,24 @@
 								{
 									"name": "inferDriftedColumnTypes",
 									"value": false
+								},
+								{
+									"name": "keys",
+									"value": [
+										"emp_id"
+									]
+								},
+								{
+									"name": "deletable",
+									"value": true
+								},
+								{
+									"name": "updateable",
+									"value": true
+								},
+								{
+									"name": "upsertable",
+									"value": true
 								}
 							]
 						}
