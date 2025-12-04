@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "Web",
 		"typeProperties": {
-			"url": "https://en.wikipedia.org/wiki/",
+			"url": "https://www.careerpower.in/states-and-capitals-of-india.html",
 			"authenticationType": "Anonymous"
 		},
 		"connectVia": {
