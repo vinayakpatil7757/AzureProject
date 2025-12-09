@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://newsdata.io",
+			"url": " https://openlibrary.org",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
