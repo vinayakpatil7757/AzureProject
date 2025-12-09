@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://api.bigbookapi.com",
+			"url": "https://www.alphavantage.co",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
