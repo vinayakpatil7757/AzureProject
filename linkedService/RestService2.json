@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://www.alphavantage.co/",
+			"url": "https://www.alphavantage.co/query",
 			"enableServerCertificateValidation": true,
 			"authenticationType": "Anonymous"
 		}
